@@ -1,0 +1,129 @@
+/* Estilos para o corpo da página */
+body{
+    background-color: #f0f0f0; /* Define a cor de fundo da página como um cinza claro */
+    font-family: Arial, Helvetica, sans-serif; /* Define a fonte padrão do texto para Arial, Helvetica ou uma fonte sans-serif genérica */
+}
+
+/* Estilos para a barra de menu */
+.menu{
+    background-color: #333; /* Define a cor de fundo do menu como um cinza escuro */
+    color: #fff; /* Define a cor do texto dentro do menu como branco */
+    display: flex; /* Habilita o layout flexbox para os elementos filhos, facilitando o alinhamento */
+    justify-content: center; /* Centraliza os itens do menu horizontalmente dentro da barra de menu */
+}
+
+/* Estilos para a lista não ordenada dentro do menu */
+.menu-lista{
+    list-style: none; /* Remove os marcadores de lista */
+    display: flex; /* Habilita o layout flexbox para os itens da lista, permitindo que fiquem em linha */
+    padding: 0; /* Remove o preenchimento interno da lista */
+    margin: 0; /* Remove a margem externa da lista */
+}
+
+/* Estilos para cada item da lista dentro do menu */
+.munu-item{ /* Correção: deveria ser ".menu-item" */
+    margin: 0; /* Remove a margem externa de cada item da lista */
+}
+
+/* Estilos para os links dentro dos itens do menu */
+.munu-item a{ /* Correção: deveria ser ".menu-item a" */
+    display: block; /* Faz com que o link ocupe toda a largura do item da lista, tornando toda a área clicável */
+    padding: 15px 20px; /* Adiciona um preenchimento interno de 15 pixels na vertical e 20 pixels na horizontal */
+    text-decoration: none; /* Remove qualquer decoração de texto, como o sublinhado padrão dos links */
+    color: #fff; /* Define a cor do texto do link como branco */
+    transition-duration: 0.4s; /* Define a duração de 0.4 segundos para as transições de propriedades (como a mudança de cor ao passar o mouse) */
+}
+
+/* Estilos para os links dentro dos itens do menu quando o mouse passa por cima */
+.munu-item a:hover{ /* Correção: deveria ser ".menu-item a:hover" */
+    background-color: #fff; /* Altera a cor de fundo do link para branco ao passar o mouse */
+    color: #333; /* Altera a cor do texto do link para um cinza escuro ao passar o mouse */
+    font-weight: bold; /* Deixa o texto do link em negrito ao passar o mouse */
+}
+
+/* Estilos para a área de conteúdo principal */
+.conteudo{
+    background-color: #fff; /* Define a cor de fundo do conteúdo como branco */
+    max-width: 800px; /* Define a largura máxima que o conteúdo pode ter, impedindo que fique muito largo em telas grandes */
+    text-align: center; /* Centraliza o texto dentro do conteúdo */
+    margin: 20px auto; /* Adiciona uma margem superior e inferior de 20 pixels e centraliza o conteúdo horizontalmente */
+    padding: 10px; /* Adiciona um preenchimento interno de 10 pixels em todos os lados */
+    border-radius: 5px; /* Arredonda os cantos da borda do conteúdo em 5 pixels */
+}
+
+/* Estilos para os parágrafos dentro da área de conteúdo */
+.conteudo p{
+    text-align: justify; /* Justifica o texto, alinhando-o nas margens esquerda e direita */
+    margin: 20px 35px; /* Adiciona uma margem superior e inferior de 20 pixels e margens laterais de 35 pixels */
+    color: #333; /* Define a cor do texto dos parágrafos como um cinza escuro */
+}
+
+/* Estilos para elementos de entrada de texto  */
+input[type=text], select, textarea{
+    width: 100%; /* Define a largura para ocupar 100% do contêiner pai */
+    padding: 12px; /* Adiciona um preenchimento interno de 12 pixels em todos os lados */
+    border: 1px solid #ccc; /* Define uma borda de 1 pixel sólida com cor cinza claro */
+    border-radius: 4px; /* Arredonda os cantos da borda em 4 pixels */
+    box-sizing: border-box; /* Garante que o padding e a borda sejam incluídos na largura e altura totais do elemento */
+    margin-top: 6px; /* Adiciona uma margem superior de 6 pixels */
+    margin-bottom: 16px; /* Adiciona uma margem inferior de 16 pixels */
+    resize: vertical /* Permite que o usuário redimensione o elemento verticalmente (útil para textarea) */
+}
+
+/* Estilos para elementos de entrada do tipo telefone */
+input[type=tel]{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical
+}
+
+/* Estilos para elementos de entrada do tipo e-mail */
+input[type=email]{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical
+}
+
+/* Estilos para o botão de submit */
+input[type=submit] {
+    background-color: #333; /* Define a cor de fundo inicial como um cinza escuro */
+    color: white; /* Define a cor do texto inicial como branco */
+    padding: 12px 20px; /* Adiciona um preenchimento interno de 12 pixels na vertical e 20 pixels na horizontal */
+    border: none; /* Remove a borda padrão do botão */
+    border-radius: 4px; /* Arredonda os cantos do botão em 4 pixels */
+    cursor: pointer; /* Altera o cursor para uma mãozinha ao passar o mouse, indicando que é clicável */
+    background-color: white; /* Sobrescreve a cor de fundo para branco */
+    color: black; /* Sobrescreve a cor do texto para preto */
+    border: 2px solid #555555; /* Adiciona uma borda de 2 pixels sólida com cor cinza */
+}
+
+/* Estilos para o botão de submit quando o mouse passa por cima */
+input[type=submit]:hover{
+    background-color: #555555; /* Altera a cor de fundo para um cinza mais claro ao passar o mouse */
+    color: white; /* Altera a cor do texto para branco ao passar o mouse */
+    font-weight: bold; /* Deixa o texto em negrito ao passar o mouse */
+}
+
+/* Estilos para um contêiner com a classe "contatos" */
+.contatos{
+    border-radius: 5px; /* Arredonda os cantos do contêiner em 5 pixels */
+    background-color: #f2f2f2; /* Define a cor de fundo como um cinza bem claro */
+    padding: 20px; /* Adiciona um preenchimento interno de 20 pixels em todos os lados */
+    justify-content: start; /* Alinha o conteúdo ao início (em layouts flexbox ou grid) */
+    text-align: start; /* Alinha o texto ao início (à esquerda em idiomas da esquerda para a direita) */
+}
+
+/* Estilos para o elemento h1 dentro do contêiner "contatos" */
+.contatos h1{
+    text-align: center; /* Centraliza o texto dentro do elemento h1 */
+}

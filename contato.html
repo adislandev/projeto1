@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="arquivo.css">
+</head>
+<body>
+    <nav class="menu">
+        <ul class="menu-lista">
+            <li class="munu-item"><a href="./index.html">Ínicio</a></li>
+            <li class="munu-item"><a href="./sobre.html">Sobre</a></li>
+            <li class="munu-item"><a href="./contato.html">Contato</a></li>
+        </ul>
+    </nav>
+    <!-- Aqui começa o conteúdo -->
+    <div class="conteudo">
+        
+        <div class="contatos">
+            <H1>Entre em contato conosco!</H1>
+            <form action="action_page.php">
+          
+                <label for="fname">Nome</label><br>
+                <input type="text" id="fname" name="firstname" required="Nome" placeholder="Nome"><br>
+            
+                <label for="lname">Sobrenome</label><br>
+                <input type="text" id="lname" name="lastname" placeholder="Sobrenome"><br>
+                
+                <label for="phone">Telefone</label><br>
+                <input type="tel" id="phone" name="phone" required="[0-9]{3}-[0-9]{2}-[0-9]{3}" placeholder="Número"><br>
+
+                <label for="email">Email</label><br>
+                <input type="email" id="email" name="email" required="e-mail" placeholder="E-mail"><br>
+
+                <label for="subject">Comentários</label><br>
+                <textarea id="subject" name="subject" placeholder="Escreva alguma coisa..." style="height:200px"></textarea><br>
+            
+                <input type="submit" value="Submit">
+          
+            </form>
+          </div>
+    </div>
+</body>
+</html>
