@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartStore - Sua loja de smartphones</title>
+    <style>
+        /* Reset básico de CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+        }
+
+        /* Variáveis para paleta de cores */
+        :root {
+            --azul-principal: #0062cc;
+            --azul-escuro: #004799;
+            --azul-claro: #007bff;
+            --amarelo: #ffcb05;
+            --branco: #ffffff;
+            --cinza-claro: #f8f9fa;
+            --cinza-texto: #777;
+            --preto: #222;
+        }
+
+        /* Estilos globais */
+        body {
+            background-color: var(--cinza-claro);
+            color: var(--preto);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Cabeçalho */
+        header {
+            background-color: var(--azul-principal);
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: var(--branco);
+        }
+
+        /* Destaque amarelo no logo conforme solicitado */
+        .logo span {
+            color: var(--amarelo);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-menu a {
+            color: var(--branco);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: var(--amarelo);
+        }
+
+        .search-cart {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .search-cart input {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 4px;
+            width: 200px;
+        }
+
+        .cart-icon {
+            color: var(--branco);
+            font-size: 20px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--amarelo);
+            color: var(--azul-escuro);
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            font-size: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Banner principal */
+        .banner {
+            background-color: var(--azul-escuro);
+            color: var(--branco);
+            padding: 50px 0;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .banner h1 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .banner p {
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        .btn-destaque {
+            background-color: var(--amarelo);
+            color: var(--azul-escuro);
+            padding: 12px 25px;
+            font-weight: bold;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn-destaque:hover {
+            background-color: #ffe066;
+        }
+
+        /* Filtros e categorias */
+        .filtros {
+            background-color: var(--branco);
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .filtros h3 {
+            margin-bottom: 10px;
+            color: var(--azul-principal);
+        }
+
+        .filtros-opcoes {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .filtro-btn {
+            background-color: var(--cinza-claro);
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            padding: 8px 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .filtro-btn:hover, .filtro-btn.ativo {
+            background-color: var(--azul-principal);
+            color: var(--branco);
+            border-color: var(--azul-principal);
+        }
+
+        /* Grid de produtos */
+        .produtos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .produto-card {
+            background-color: var(--branco);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .produto-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .produto-imagem {
+            height: 200px;
+            width: 100%;
+            background-color: var(--branco);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .produto-imagem img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+        }
+
+        .produto-info {
+            padding: 15px;
+        }
+
+        .produto-marca {
+            color: var(--cinza-texto);
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .produto-nome {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--azul-escuro);
+        }
+
+        .produto-preco {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+        }
+
+        .preco-de {
+            text-decoration: line-through;
+            color: var(--cinza-texto);
+            font-size: 14px;
+        }
+
+        .preco-por {
+            font-size: 22px;
+            font-weight: bold;
+            color: var(--azul-principal);
+        }
+
+        /* Destacar o preço com amarelo conforme solicitado */
+        .preco-por span {
+            color: var(--amarelo);
+        }
+
+        .preco-parcelas {
+            font-size: 13px;
+            color: var(--cinza-texto);
+            margin-top: 5px;
+        }
+
+        .btn-comprar {
+            width: 100%;
+            background-color: var(--azul-principal);
+            color: var(--branco);
+            border: none;
+            padding: 10px 0;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn-comprar:hover {
+            background-color: var(--azul-escuro);
+        }
+
+        /* Banner promocional */
+        .banner-promocional {
+            background-color: var(--azul-claro);
+            color: var(--branco);
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .banner-texto {
+            flex: 1;
+        }
+
+        .banner-texto h2 {
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+
+        .banner-texto p {
+            margin-bottom: 20px;
+        }
+
+        .banner-img {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Newsletter */
+        .newsletter {
+            background-color: var(--branco);
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .newsletter h3 {
+            margin-bottom: 15px;
+            color: var(--azul-principal);
+        }
+
+        .newsletter p {
+            margin-bottom: 20px;
+            color: var(--cinza-texto);
+        }
+
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px 0 0 4px;
+        }
+
+        .newsletter-form button {
+            background-color: var(--amarelo);
+            color: var(--azul-escuro);
+            border: none;
+            padding: 0 20px;
+            border-radius: 0 4px 4px 0;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: var(--azul-escuro);
+            color: var(--branco);
+            padding: 40px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-coluna h4 {
+            color: var(--amarelo);
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: var(--branco);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--amarelo);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .nav-menu {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            .search-cart {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .banner-promocional {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .banner-texto {
+                margin-bottom: 20px;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .newsletter-form input {
+                margin-bottom: 10px;
+                border-radius: 4px;
+            }
+            
+            .newsletter-form button {
+                width: 100%;
+                border-radius: 4px;
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">Inovar<span>Tech tecnologia</span></div>
+                <ul class="nav-menu">
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#">Ofertas</a></li>
+                    <li><a href="#">Celulares</a></li>
+                    <li><a href="#">Acessórios</a></li>
+                    <li><a href="integrated-contact-page.html">Contato</a></li>
+                    <li><a href="sobre.html"> Sobre </a></li>
+                </ul>
+                <div class="search-cart">
+                    <input type="text" placeholder="Pesquisar produtos...">
+                    <div class="cart-icon">
+                        🛒
+                        <span class="cart-count">3</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Banner principal -->
+    <section class="banner">
+        <div class="container">
+            <h1>Os melhores smartphones com os melhores preços</h1>
+            <p>Descubra nossa seleção exclusiva de smartphones com até 30% de desconto</p>
+            <button class="btn-destaque">Ver ofertas</button>
+        </div>
+    </section>
+
+    <!-- Conteúdo principal -->
+    <main class="container">
+        <!-- Filtros -->
+        <section class="filtros">
+            <h3>Filtrar por:</h3>
+            <div class="filtros-opcoes">
+                <button class="filtro-btn ativo">Todos</button>
+                <button class="filtro-btn">Samsung</button>
+                <button class="filtro-btn">Apple</button>
+                <button class="filtro-btn">Xiaomi</button>
+                <button class="filtro-btn">Motorola</button>
+                <button class="filtro-btn">Preço até R$ 1000</button>
+                <button class="filtro-btn">Preço até R$ 2000</button>
+                <button class="filtro-btn">Preço até R$ 3000</button>
+            </div>
+        </section>
+
+        <!-- Grade de produtos -->
+        <section class="produtos-grid">
+            <!-- Produto 1 -->
+            <div class="produto-card">
+                <div class="produto-imagem">
+                    <img src="OIP.png" alt="sansumg">
+                </div>
+                <div class="produto-info">
+                    <div class="produto-marca">Samsung</div>
+                    <h3 class="produto-nome">Galaxy A54 128GB</h3>
+                    <div class="produto-preco">
+                        <span class="preco-de">R$ 2.499,00</span>
+                        <span class="preco-por">R$ <span>1.999</span>,00</span>
+                        <span class="preco-parcelas">ou 12x de R$ 166,58 sem juros</span>
+                    </div>
+                    <button class="btn-comprar">Adicionar ao carrinho</button>
+                </div>
+            </div>
+
+            <!-- Produto 2 -->
+            <div class="produto-card">
+                <div class="produto-imagem">
+                    <img src="iphone.png" alt=" iphone ">
+                </div>
+                <div class="produto-info">
+                    <div class="produto-marca">Apple</div>
+                    <h3 class="produto-nome">iPhone 13 128GB</h3>
+                    <div class="produto-preco">
+                        <span class="preco-de">R$ 4.899,00</span>
+                        <span class="preco-por">R$ <span>4.299</span>,00</span>
+                        <span class="preco-parcelas">ou 12x de R$ 358,25 sem juros</span>
+                    </div>
+                    <button class="btn-comprar">Adicionar ao carrinho</button>
+                </div>
+            </div>
+
+            <!-- Produto 3 -->
+            <div class="produto-card">
+                <div class="produto-imagem">
+                    <img src="redmi.png" alt=" redmi ">
+                </div>
+                <div class="produto-info">
+                    <div class="produto-marca">Xiaomi</div>
+                    <h3 class="produto-nome">Redmi Note 12 Pro 128GB</h3>
+                    <div class="produto-preco">
+                        <span class="preco-de">R$ 2.199,00</span>
+                        <span class="preco-por">R$ <span>1.699</span>,00</span>
+                        <span class="preco-parcelas">ou 12x de R$ 141,58 sem juros</span>
+                    </div>
+                    <button class="btn-comprar">Adicionar ao carrinho</button>
+                </div>
+            </div>
+
+            <!-- Produto 4 -->
+            <div class="produto-card">
+                <div class="produto-imagem">
+                    <img src="matorola.png" alt=" mototola ">
+                </div>
+                <div class="produto-info">
+                    <div class="produto-marca">Motorola</div>
+                    <h3 class="produto-nome">Moto G52 128GB</h3>
+                    <div class="produto-preco">
+                        <span class="preco-de">R$ 1.899,00</span>
+                        <span class="preco-por">R$ <span>1.499</span>,00</span>
+                        <span class="preco-parcelas">ou 12x de R$ 124,92 sem juros</span>
+                    </div>
+                    <button class="btn-comprar">Adicionar ao carrinho</button>
+                </div>
+            </div>
+
+            <!-- Produto 5 -->
+            <div class="produto-card">
+                <div class="produto-imagem">
+                    <img src="s23.png" alt=" s23 ">
+                </div>
+                <div class="produto-info">
+                    <div class="produto-marca">Samsung</div>
+                    <h3 class="produto-nome">Galaxy S23 256GB</h3>
+                    <div class="produto-preco">
+                        <span class="preco-de">R$ 5.999,00</span>
+                        <span class="preco-por">R$ <span>5.499</span>,00</span>
+                        <span class="preco-parcelas">ou 12x de R$ 458,25 sem juros</span>
+                    </div>
+                    <button class="btn-comprar">Adicionar ao carrinho</button>
+                </div>
+            </div>
+
+            <!-- Produto 6 -->
+            <div class="produto-card">
+                <div class="produto-imagem">
+                    <img src="iphone 14.jpg" alt="Smartphone Apple">
+                </div>
+                <div class="produto-info">
+                    <div class="produto-marca">Apple</div>
+                    <h3 class="produto-nome">iPhone 14 Pro 256GB</h3>
+                    <div class="produto-preco">
+                        <span class="preco-de">R$ 7.999,00</span>
+                        <span class="preco-por">R$ <span>7.499</span>,00</span>
+                        <span class="preco-parcelas">ou 12x de R$ 624,92 sem juros</span>
+                    </div>
+                    <button class="btn-comprar">Adicionar ao carrinho</button>
+                </div>
+            </div>
+
+            <!-- Produto 7 -->
+            <div class="produto-card">
+                <div class="produto-imagem">
+                    <img src="poco.jpg" alt=" poco loco ">
+                </div>
+                <div class="produto-info">
+                    <div class="produto-marca">Xiaomi</div>
+                    <h3 class="produto-nome">POCO X5 Pro 256GB</h3>
+                    <div class="produto-preco">
+                        <span class="preco-de">R$ 2.899,00</span>
+                        <span class="preco-por">R$ <span>2.399</span>,00</span>
+                        <span class="preco-parcelas">ou 12x de R$ 199,92 sem juros</span>
+                    </div>
+                    <button class="btn-comprar">Adicionar ao carrinho</button>
+                </div>
+            </div>
+
+            <!-- Produto 8 -->
+            <div class="produto-card">
+                <div class="produto-imagem">
+                    <img src="edge.png" alt=" edigar ">
+                </div>
+                <div class="produto-info">
+                    <div class="produto-marca">Motorola</div>
+                    <h3 class="produto-nome">Edge 30 Ultra 256GB</h3>
+                    <div class="produto-preco">
+                        <span class="preco-de">R$ 4.499,00</span>
+                        <span class="preco-por">R$ <span>3.999</span>,00</span>
+                        <span class="preco-parcelas">ou 12x de R$ 333,25 sem juros</span>
+                    </div>
+                    <button class="btn-comprar">Adicionar ao carrinho</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Banner promocional -->
+        <section class="banner-promocional">
+            <div class="banner-texto">
+                <h2>Smartphones Topo de Linha com Preços Especiais</h2>
+                <p>Aproveite nossa promoção especial em smartphones premium. Economize até R$ 1.000 nas melhores marcas do mercado!</p>
+                <button class="btn-destaque">Ver ofertas premium</button>
+            </div>
+            <div class="banner-img">
+                <img src="caro.png" alt=" celular caro ">
+            </div>
+        </section>
+
+        <!-- Newsletter -->
+        <section class="newsletter">
+            <h3>Fique por dentro das novidades</h3>
+            <p>Cadastre-se para receber ofertas exclusivas e lançamentos de smartphones em primeira mão</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Seu melhor e-mail">
+                <button type="submit">Cadastrar</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-coluna">
+                    <h4>SmartStore</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Quem Somos</a></li>
+                        <li><a href="#">Nossas Lojas</a></li>
+                        <li><a href="#">Trabalhe Conosco</a></li>
+                        <li><a href="#">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+                <div class="footer-coluna">
+                    <h4>Atendimento</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Central de Ajuda</a></li>
+                        <li><a href="#">Fale Conosco</a></li>
+                        <li><a href="#">Devolução e Reembolso</a></li>
+                        <li><a href="#">Rastreamento de Pedidos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-coluna">
+                    <h4>Formas de Pagamento</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Cartões de Crédito</a></li>
+                        <li><a href="#">Boleto Bancário</a></li>
+                        <li><a href="#">PIX</a></li>
+                        <li><a href="#">Financiamento</a></li>
+                    </ul>
+                </div>
+                <div class="footer-coluna">
+                    <h4>Redes Sociais</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">YouTube</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 InovarTech tecnologia - Todos os direitos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // JavaScript para funcionalidade dos filtros
+        document.addEventListener('DOMContentLoaded', function() {
+            // Seleciona todos os botões de filtro
+            const filtroBtns = document.querySelectorAll('.filtro-btn');
+            
+            // Adiciona event listener para cada botão
+            filtroBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remove a classe ativo de todos os botões
+                    filtroBtns.forEach(b => b.classList.remove('ativo'));
+                    
+                    // Adiciona a classe ativo ao botão clicado
+                    this.classList.add('ativo');
+                    
+                    // Aqui você adicionaria a lógica para filtrar os produtos
+                    // Por simplicidade, apenas exibimos qual filtro foi selecionado
+                    console.log('Filtro selecionado:', this.textContent);
+                    
+                    // Na implementação real, você filtraria os produtos com base na categoria selecionada
+                    // simulateFilterProducts(this.textContent);
+                });
+            });
+            
+            // Função para simular a filtragem de produtos (não implementada completamente)
+            function simulateFilterProducts(filter) {
+                // Em uma implementação real, isso buscaria produtos do backend
+                // ou filtraria produtos já carregados na página
+                
+                // Por exemplo, você poderia ter um código assim:
+                // const produtos = document.querySelectorAll('.produto-card');
+                // produtos.forEach(produto => {
+                //    const marca = produto.querySelector('.produto-marca').textContent;
+                //    if (filter === 'Todos' || marca === filter) {
+                //        produto.style.display = 'block';
+                //    } else {
+                //        produto.style.display = 'none';
+                //    }
+                // });
+            }
+            
+            // Adicionar funcionalidade aos botões "Adicionar ao carrinho"
+            const botoesComprar = document.querySelectorAll('.btn-comprar');
+            
+            botoesComprar.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const produtoCard = this.closest('.produto-card');
+                    const nomeProduto = produtoCard.querySelector('.produto-nome').textContent;
+                    const precoProduto = produtoCard.querySelector('.preco-por').textContent;
+                    
+                    // Simula a adição ao carrinho
+                    alert(`Produto adicionado ao carrinho: ${nomeProduto} - ${precoProduto}`);
+                    
+                    // Atualiza o contador do carrinho (simulação)
+                    const carrinhoContador = document.querySelector('.cart-count');
+                    let contadorAtual = parseInt(carrinhoContador.textContent);
+                    carrinhoContador.textContent = contadorAtual + 1;
+                });
+            });
+            
+            // Formulário de newsletter
+            const formNewsletter = document.querySelector('.newsletter-form');
+            
+            formNewsletter.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const emailInput = this.querySelector('input[type="email"]');
+                const email = emailInput.value;
+                
+                if (email) {
+                    // Simulação de envio
+                    alert(`E-mail ${email} cadastrado com sucesso!`);
+                    emailInput.value = '';
+                } else {
+                    alert('Por favor, insira um e-mail válido.');
+                }
+            });
+            
+            // Simulação de um carregamento de dados (poderia ser uma API real)
+            function simularCarregamentoDados() {
+                console.log('Carregando dados dos produtos...');
+                // Em uma loja real, aqui você faria uma chamada AJAX/fetch para obter dados
+            }
+            
+            // Simular chamada inicial de dados
+            simularCarregamentoDados();
+        });
+    </script>
+</body>
+</html>
