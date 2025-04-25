@@ -1,129 +1,549 @@
+
+/* Reset básico para garantir consistência entre navegadores */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos gerais do corpo do documento */
+body {
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f7fa;
+    /* Background com padrão sutil */
+    background-image: 
+        radial-gradient(#e5e8ef 1px, transparent 1px), 
+        radial-gradient(#e5e8ef 1px, transparent 1px);
+    background-position: 0 0, 25px 25px;
+    background-size: 50px 50px;
+}
+
+/* Estilização do cabeçalho */
+header {
+    background: linear-gradient(135deg, #1a73e8, #0d47a1);
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* Logo e nome da loja */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.logo-text {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 1px;
+}
+
+.logo-text span {
+    color: #ffcc00;
+}
+
+/* Estilização do menu principal */
+.menu {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem 1rem;
+}
+
+/* Botão do menu hamburger (visível apenas em mobile) */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    position: absolute;
+    top: 1.5rem;
+    right: 1rem;
+}
+
+.menu-lista {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Estilização dos itens do menu */
+.menu-item {
+    margin: 5px;
+}
+
+.menu-item a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.menu-item a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Estilização do conteúdo principal */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+/* Estilização das seções de conteúdo */
+.conteudo {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(149, 157, 165, 0.2);
+    padding: 2.5rem;
+    margin: 2rem auto;
+    transition: transform 0.3s ease;
+    max-width: 1200px;
+}
+
+@media (max-width: 768px) {
+    .conteudo {
+        padding: 1.5rem;
+    }
+}
+
+.conteudo:hover {
+    transform: translateY(-5px);
+}
+
+/* Estilização de títulos */
+h1 {
+    color: #1a73e8;
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+    text-align: center;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+h1::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #1a73e8, #65a9ff);
+    border-radius: 2px;
+}
+
+.contatos {
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    padding: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.contatos h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+/* Estilização do formulário */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #444;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #1a73e8;
+    box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.2);
+    outline: none;
+}
+
+textarea.form-control {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.submit-btn {
+    background-color: #1a73e8;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    margin: 1.5rem auto 0;
+    text-align: center;
+    
+}
+
+.submit-btn:hover {
+    background-color: #0d47a1;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(26, 115, 232, 0.3);
+    color: #ffcc00;
+    font-weight: bold;
+    transform: scale(1.3);
+}
+
+/* Decorações */
+.decoration {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-color: rgba(26, 115, 232, 0.05);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.decoration-1 {
+    top: 10%;
+    left: 5%;
+}
+
+.decoration-2 {
+    bottom: 20%;
+    right: 10%;
+    width: 200px;
+    height: 200px;
+}
+
+/* Media queries para responsividade */
+@media (max-width: 992px) {
+    .menu-lista {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu {
+        padding: 0;
+    }
+
+    .menu-lista {
+        flex-direction: column;
+        text-align: center;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        width: 100%;
+    }
+
+    .menu-lista.active {
+        max-height: 500px;
+        padding-bottom: 1rem;
+    }
+
+    .menu-item {
+        margin: 5px 0;
+    }
+
+    .menu-item a {
+        padding: 10px 15px;
+        border-radius: 0;
+    }
+
+    .logo-container {
+        justify-content: space-between;
+        padding: 1rem;
+    }
+}
+
+/* Grade para formulário em telas maiores */
+@media (min-width: 768px) {
+    .form-row {
+        display: flex;
+        margin: 0 -10px;
+    }
+
+    .form-column {
+        flex: 1;
+        padding: 0 10px;
+    }
+}
+
+/* Mensagem de validação */
+.form-control.was-validated:invalid {
+    border-color: #dc3545;
+}
+
+.invalid-feedback {
+    color: #dc3545;
+    font-size: 0.85rem;
+    margin-top: 5px;
+    display: none;
+}
+
+.form-control.was-validated:invalid + .invalid-feedback {
+    display: block;
+}
+
+/* Flash de animação para feedback */
+@keyframes formSubmit {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.submit-animation {
+    animation: formSubmit 0.3s ease;
+}
+
+/* Estilização para os ícones Bootstrap */
+.form-icon {
+    margin-right: 8px;
+    color: #1a73e8;
+}
+
+.menu-item i {
+    margin-right: 5px;
+}
+
+.contact-icon {
+    font-size: 1.2rem;
+    vertical-align: middle;
+    margin-right: 8px;
+=======
 /* Estilos para o corpo da página */
-body{
-    background-color: #f0f0f0; /* Define a cor de fundo da página como um cinza claro */
-    font-family: Arial, Helvetica, sans-serif; /* Define a fonte padrão do texto para Arial, Helvetica ou uma fonte sans-serif genérica */
+body {
+    background-color: #f5f5f7; /* Fundo cinza claro estilo Apple/tech */
+    font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif; /* Fonte mais moderna */
+    margin: 0;
+    padding: 0;
+    color: #333;
 }
 
 /* Estilos para a barra de menu */
-.menu{
-    background-color: #333; /* Define a cor de fundo do menu como um cinza escuro */
-    color: #fff; /* Define a cor do texto dentro do menu como branco */
-    display: flex; /* Habilita o layout flexbox para os elementos filhos, facilitando o alinhamento */
-    justify-content: center; /* Centraliza os itens do menu horizontalmente dentro da barra de menu */
+.menu {
+    background-color: #0066cc; /* Azul tecnológico */
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 /* Estilos para a lista não ordenada dentro do menu */
-.menu-lista{
-    list-style: none; /* Remove os marcadores de lista */
-    display: flex; /* Habilita o layout flexbox para os itens da lista, permitindo que fiquem em linha */
-    padding: 0; /* Remove o preenchimento interno da lista */
-    margin: 0; /* Remove a margem externa da lista */
+.menu-lista {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    width: 80%;
+    max-width: 1200px;
 }
 
 /* Estilos para cada item da lista dentro do menu */
-.munu-item{ /* Correção: deveria ser ".menu-item" */
-    margin: 0; /* Remove a margem externa de cada item da lista */
+.munu-item { /* Mantendo o nome original da classe mesmo com erro */
+    margin: 0;
 }
 
 /* Estilos para os links dentro dos itens do menu */
-.munu-item a{ /* Correção: deveria ser ".menu-item a" */
-    display: block; /* Faz com que o link ocupe toda a largura do item da lista, tornando toda a área clicável */
-    padding: 15px 20px; /* Adiciona um preenchimento interno de 15 pixels na vertical e 20 pixels na horizontal */
-    text-decoration: none; /* Remove qualquer decoração de texto, como o sublinhado padrão dos links */
-    color: #fff; /* Define a cor do texto do link como branco */
-    transition-duration: 0.4s; /* Define a duração de 0.4 segundos para as transições de propriedades (como a mudança de cor ao passar o mouse) */
+.munu-item a {
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.3s ease;
+    font-weight: 500;
 }
 
 /* Estilos para os links dentro dos itens do menu quando o mouse passa por cima */
-.munu-item a:hover{ /* Correção: deveria ser ".menu-item a:hover" */
-    background-color: #fff; /* Altera a cor de fundo do link para branco ao passar o mouse */
-    color: #333; /* Altera a cor do texto do link para um cinza escuro ao passar o mouse */
-    font-weight: bold; /* Deixa o texto do link em negrito ao passar o mouse */
+.munu-item a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    transform: translateY(-2px);
 }
 
 /* Estilos para a área de conteúdo principal */
-.conteudo{
-    background-color: #fff; /* Define a cor de fundo do conteúdo como branco */
-    max-width: 800px; /* Define a largura máxima que o conteúdo pode ter, impedindo que fique muito largo em telas grandes */
-    text-align: center; /* Centraliza o texto dentro do conteúdo */
-    margin: 20px auto; /* Adiciona uma margem superior e inferior de 20 pixels e centraliza o conteúdo horizontalmente */
-    padding: 10px; /* Adiciona um preenchimento interno de 10 pixels em todos os lados */
-    border-radius: 5px; /* Arredonda os cantos da borda do conteúdo em 5 pixels */
+.conteudo {
+    background-color: #fff;
+    max-width: 1000px;
+    text-align: center;
+    margin: 30px auto 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Título principal */
+.conteudo h1 {
+    color: #0066cc;
+    font-size: 2.2rem;
+    margin-bottom: 15px;
 }
 
 /* Estilos para os parágrafos dentro da área de conteúdo */
-.conteudo p{
-    text-align: justify; /* Justifica o texto, alinhando-o nas margens esquerda e direita */
-    margin: 20px 35px; /* Adiciona uma margem superior e inferior de 20 pixels e margens laterais de 35 pixels */
-    color: #333; /* Define a cor do texto dos parágrafos como um cinza escuro */
+.conteudo p {
+    text-align: center;
+    margin: 20px 35px;
+    color: #555;
+    line-height: 1.6;
+    font-size: 1.1rem;
 }
 
-/* Estilos para elementos de entrada de texto  */
-input[type=text], select, textarea{
-    width: 100%; /* Define a largura para ocupar 100% do contêiner pai */
-    padding: 12px; /* Adiciona um preenchimento interno de 12 pixels em todos os lados */
-    border: 1px solid #ccc; /* Define uma borda de 1 pixel sólida com cor cinza claro */
-    border-radius: 4px; /* Arredonda os cantos da borda em 4 pixels */
-    box-sizing: border-box; /* Garante que o padding e a borda sejam incluídos na largura e altura totais do elemento */
-    margin-top: 6px; /* Adiciona uma margem superior de 6 pixels */
-    margin-bottom: 16px; /* Adiciona uma margem inferior de 16 pixels */
-    resize: vertical /* Permite que o usuário redimensione o elemento verticalmente (útil para textarea) */
+/* Box centralizada dos benefícios */
+.box {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto 30px; /* Centraliza horizontalmente com auto */
+    padding: 20px;
+    background: linear-gradient(145deg, #0066cc, #0077e6);
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 102, 0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
 }
 
-/* Estilos para elementos de entrada do tipo telefone */
-input[type=tel]{
+/* Benefícios */
+.beneficios {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    width: 100%;
+}
+
+.beneficios p {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: calc(33.33% - 15px);
+    text-align: center;
+    color: #333;
+    font-weight: 600;
+    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80px;
+}
+
+.beneficios p:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilos para formulários */
+input[type=text], select, textarea, input[type=tel], input[type=email] {
     width: 100%;
     padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
     box-sizing: border-box;
     margin-top: 6px;
     margin-bottom: 16px;
-    resize: vertical
+    resize: vertical;
+    font-family: inherit;
+    transition: border-color 0.3s;
 }
 
-/* Estilos para elementos de entrada do tipo e-mail */
-input[type=email]{
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    resize: vertical
+input:focus, textarea:focus, select:focus {
+    border-color: #0066cc;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.2);
 }
 
 /* Estilos para o botão de submit */
 input[type=submit] {
-    background-color: #333; /* Define a cor de fundo inicial como um cinza escuro */
-    color: white; /* Define a cor do texto inicial como branco */
-    padding: 12px 20px; /* Adiciona um preenchimento interno de 12 pixels na vertical e 20 pixels na horizontal */
-    border: none; /* Remove a borda padrão do botão */
-    border-radius: 4px; /* Arredonda os cantos do botão em 4 pixels */
-    cursor: pointer; /* Altera o cursor para uma mãozinha ao passar o mouse, indicando que é clicável */
-    background-color: white; /* Sobrescreve a cor de fundo para branco */
-    color: black; /* Sobrescreve a cor do texto para preto */
-    border: 2px solid #555555; /* Adiciona uma borda de 2 pixels sólida com cor cinza */
+    background-color: #0066cc;
+    color: white;
+    padding: 14px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 1rem;
 }
 
 /* Estilos para o botão de submit quando o mouse passa por cima */
-input[type=submit]:hover{
-    background-color: #555555; /* Altera a cor de fundo para um cinza mais claro ao passar o mouse */
-    color: white; /* Altera a cor do texto para branco ao passar o mouse */
-    font-weight: bold; /* Deixa o texto em negrito ao passar o mouse */
+input[type=submit]:hover {
+    background-color: #004c99;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Estilos para um contêiner com a classe "contatos" */
-.contatos{
-    border-radius: 5px; /* Arredonda os cantos do contêiner em 5 pixels */
-    background-color: #f2f2f2; /* Define a cor de fundo como um cinza bem claro */
-    padding: 20px; /* Adiciona um preenchimento interno de 20 pixels em todos os lados */
-    justify-content: start; /* Alinha o conteúdo ao início (em layouts flexbox ou grid) */
-    text-align: start; /* Alinha o texto ao início (à esquerda em idiomas da esquerda para a direita) */
+.contatos {
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 25px;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
 /* Estilos para o elemento h1 dentro do contêiner "contatos" */
-.contatos h1{
-    text-align: center; /* Centraliza o texto dentro do elemento h1 */
+.contatos h1 {
+    text-align: center;
+    color: #0066cc;
+    margin-bottom: 20px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .beneficios {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .beneficios p {
+        width: 90%;
+    }
+    
+    .box {
+        height: auto;
+        padding: 20px 15px;
+    }
+    
+    .conteudo {
+        margin: 20px 15px;
+        width: auto;
+    }
+    
+    .menu-lista {
+        width: 100%;
+    }
+
 }
