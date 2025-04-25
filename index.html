@@ -1,226 +1,25 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Footer Positivo</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome para ícones -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <style>
-        footer {
-            background-color: #f8f9fa;
-            padding: 40px 0 20px;
-            color: #555;
-            font-size: 14px;
-        }
-        
-        footer h4 {
-            color: #333;
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
-        
-        footer ul {
-            list-style: none;
-            padding-left: 0;
-        }
-        
-        footer ul li {
-            margin-bottom: 10px;
-        }
-        
-        footer a {
-            color: #555;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        footer a:hover {
-            color: #0d6efd;
-            text-decoration: underline;
-        }
-        
-        .social-icons i {
-            font-size: 28px;
-            margin-right: 20px;
-            color: #6c757d;
-            transition: color 0.3s;
-        }
-        
-        .social-icons a:hover i {
-            color: #0d6efd;
-        }
-        
-        .payment-methods {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-        }
-        
-        .payment-methods i {
-            font-size: 32px;
-            margin-right: 15px;
-            margin-bottom: 15px;
-        }
-        
-        .payment-icon {
-            margin-right: 15px;
-            margin-bottom: 15px;
-            height: 30px;
-            display: inline-block;
-        }
-        
-        .payment-icon img {
-            height: 100%;
-        }
-        
-        .seals img {
-            height: 50px;
-            margin-right: 15px;
-            margin-bottom: 15px;
-        }
-        
-        .external-link::after {
-            content: " \f08e";
-            font-family: "Font Awesome 6 Free";
-            font-weight: 900;
-            font-size: 12px;
-        }
-        
-        .fa-cc-visa {color: #1A1F71;}
-        .fa-cc-mastercard {color: #EB001B;}
-        .fa-cc-amex {color: #006FCF;}
-        .fa-cc-diners-club {color: #0079BE;}
-        .pix-icon {color: #32BCAD;}
-        .nubank-icon {color: #820AD1;}
-        .picpay-icon {color: #11C76F;}
-        .hipercard-icon {color: #822124;}
-        .elo-icon {color: #000;}
-    </style>
+    <title>Document</title>
+    <link rel="stylesheet" href="arquivo.css">
 </head>
 <body>
-
-<footer>
-    <div class="container">
-        <div class="row">
-            <!-- Quem Somos -->
-            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-                <h4>Quem Somos</h4>
-                <ul>
-                    <li><a href="#" class="external-link">Institucional</a></li>
-                    <li><a href="#" class="external-link">Termos de uso</a></li>
-                    <li><a href="#" class="external-link">Política de garantia</a></li>
-                    <li><a href="#" class="external-link">Política de Privacidade e Cookies</a></li>
-                </ul>
-            </div>
-            
-            <!-- Suporte -->
-            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-                <h4>Suporte</h4>
-                <ul>
-                    <li><a href="#" class="external-link">Autoatendimento</a></li>
-                    <li><a href="#" class="external-link">Acompanhe seu reparo</a></li>
-                    <li><a href="#" class="external-link">Canais de atendimento</a></li>
-                    <li><a href="#" class="external-link">Acesso remoto</a></li>
-                    <li><a href="#">Dúvidas</a></li>
-                    <li><a href="#">Manuais</a></li>
-                    <li><a href="#" class="external-link">Recuperação eletrônica</a></li>
-                    <li><a href="#" class="external-link">Venda de peças avulsas</a></li>
-                    <li><a href="#" class="external-link">Serviços de reparo</a></li>
-                    <li><a href="#" class="external-link">Canal Aberto</a></li>
-                </ul>
-            </div>
-            
-            <!-- Outros sites -->
-            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-                <h4>Outros sites</h4>
-                <ul>
-                    <li><a href="#" class="external-link">Positivo Tecnologia</a></li>
-                    <li><a href="#" class="external-link">Positivo Empresas</a></li>
-                    <li><a href="#" class="external-link">Setor Público</a></li>
-                    <li><a href="#" class="external-link">Educacional</a></li>
-                    <li><a href="#" class="external-link">Black Friday</a></li>
-                </ul>
-            </div>
-            
-            <!-- Conexões sociais e pagamentos -->
-            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-                <h4>Redes Sociais</h4>
-                <div class="social-icons mb-4">
-                    <a href="#"><i class="fab fa-facebook" aria-label="Facebook"></i></a>
-                    <a href="#"><i class="fab fa-instagram" aria-label="Instagram"></i></a>
-                    <a href="#"><i class="fab fa-twitter" aria-label="Twitter"></i></a>
-                    <a href="#"><i class="fab fa-youtube" aria-label="YouTube"></i></a>
-                </div>
-                
-                <h4>Formas de pagamento</h4>
-                <div class="payment-methods mb-4">
-                    <i class="fab fa-cc-visa" aria-label="Visa"></i>
-                    <i class="fab fa-cc-mastercard" aria-label="Mastercard"></i>
-                    <i class="fab fa-cc-amex" aria-label="American Express"></i>
-                    
-                    <!-- Ícones personalizados para cartões que não estão no Font Awesome -->
-                    <span class="payment-icon elo-icon">
-                        <svg viewBox="0 0 750 471" height="30" width="45" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M40 0h670c22 0 40 18 40 40v391c0 22-18 40-40 40H40c-22 0-40-18-40-40V40C0 18 18 0 40 0z" fill="#fff"/>
-                            <path d="M529.9 118.6c-12.8 0-23.2 10.4-23.2 23.2 0 12.8 10.4 23.2 23.2 23.2 12.8 0 23.2-10.4 23.2-23.2 0-12.8-10.4-23.2-23.2-23.2z" fill="#000"/>
-                            <path d="M511.8 161.6c0-29.1 23.7-52.8 52.8-52.8 9.9 0 19.2 2.8 27.1 7.5-11.7-12.8-28.5-20.8-47.1-20.8-35.3 0-63.9 28.6-63.9 63.9s28.6 63.9 63.9 63.9c18.6 0 35.4-8 47.1-20.8-7.9 4.8-17.2 7.5-27.1 7.5-29.1 0-52.8-23.7-52.8-52.8v-3.8z" fill="#00529e"/>
-                            <path d="M520.8 161.6c0-22.5 16.8-41.1 38.5-44v-8.9c-26.3 3-46.6 24.7-46.6 51.8 0 27.1 20.3 48.8 46.6 51.8v-8.9c-21.7-2.9-38.5-21.5-38.5-44v3.2z" fill="#fbb224"/>
-                            <path d="M573.5 117.6v8.9c21.7 2.9 38.5 21.5 38.5 44v-3.8c0-22.5-16.8-41.1-38.5-44z" fill="#eb5424"/>
-                            <path d="M573.5 211.6v-8.9c21.7-2.9 38.5-21.5 38.5-44v3.8c0 22.5-16.8 41.1-38.5 44z" fill="#eb5424"/>
-                        </svg>
-                    </span>
-                    
-                    <i class="fa-solid fa-building-columns" aria-label="Diners Club"></i>
-                    
-                    <span class="payment-icon hipercard-icon">
-                        <svg height="30" width="45" viewBox="0 0 512 266" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M512 210.1c0 30.9-25 56-55.9 56H56c-30.9 0-56-25-56-56V56C0 25 25.1 0 56 0h400.1c30.9 0 55.9 25 55.9 56v154.1z" fill="#822124"/>
-                            <path d="M100.1 196.1V69.9H67.6v126.2h32.5zm328.6-126.2l-17.9 64.4-17.5-64.4h-37.9L385 196.1h37.3c-21.2-19-26.8-47.8-16.3-71l5.1-12.6 24.7 87.6h31.3l47.1-126.2h-85.5zm-67.6 25.4v-25.4h-96.6v126.2h96.6v-25.3h-64v-24.2h62v-25.2h-62v-26.1h64z" fill="#fff"/>
-                        </svg>
-                    </span>
-                    
-                    <span class="payment-icon pix-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="30" width="45" viewBox="0 0 512 512">
-                            <path d="M242.4 292.5C247.8 287.1 257.1 287.1 262.5 292.5L339.5 369.5C359.1 389.1 359.1 421.6 339.5 441.2C319.9 460.8 287.4 460.8 267.8 441.2L242.4 415.8C237.1 410.4 237.1 401.1 242.4 396.6C247.8 391.2 257.1 391.2 262.5 396.6L287.9 422C297.4 431.5 309.9 431.5 319.4 422C328.9 412.5 328.9 400 319.4 390.5L242.4 313.5C237.1 308.1 237.1 298.8 242.4 293.4L242.4 292.5z" fill="#32BCAD"/>
-                            <path d="M339.5 196.5C359.1 216.1 359.1 248.6 339.5 268.2C319.9 287.8 287.4 287.8 267.8 268.2L242.4 242.8C237.1 237.4 237.1 228.1 242.4 222.6C247.8 217.2 257.1 217.2 262.5 222.6L287.9 248C297.4 257.5 309.9 257.5 319.4 248C328.9 238.5 328.9 226 319.4 216.5L242.4 139.5C237.1 134.1 237.1 124.8 242.4 119.4C247.8 114 257.1 114 262.5 119.4L339.5 196.4V196.5z" fill="#32BCAD"/>
-                            <path d="M447.5 120.5L391.8 64.8C384.1 57.1 373.3 53 362 53H277C265.7 53 254.9 57.1 247.2 64.8L208.4 103.6C200.7 111.3 196.6 122.1 196.6 133.4V193.4C196.6 200.1 201.9 205.4 208.6 205.4C215.3 205.4 220.6 200.1 220.6 193.4V133.4C220.6 129.9 221.9 126.5 224.3 124.1L263.1 85.3C265.5 82.9 268.9 81.6 272.4 81.6H357.4C360.9 81.6 364.3 82.9 366.7 85.3L422.4 141C424.8 143.4 426.1 146.8 426.1 150.3V235.3C426.1 238.8 424.8 242.2 422.4 244.6L413.4 253.6C408 259 398.8 259 393.4 253.6C388 248.2 388 239 393.4 233.6L401.1 226L391.7 216.5C386.3 211.1 386.3 201.9 391.7 196.5C397.1 191.1 406.3 191.1 411.7 196.5L429.7 214.5C437.4 222.2 441.5 233 441.5 244.3V254.3C441.5 265.6 437.4 276.4 429.7 284.1L372.9 340.9C370.5 343.3 367.1 344.6 363.6 344.6H278C274.5 344.6 271.1 343.3 268.7 340.9L249.2 321.4C243.8 316 243.8 306.8 249.2 301.4C254.6 296 263.8 296 269.2 301.4L287.3 319.6H354.2L405.5 268.3C405.5 268.3 405.6 268.2 405.6 268.1L447.5 226.2C455.2 218.5 459.3 207.7 459.3 196.4V150.3C459.3 139 455.2 128.2 447.5 120.5V120.5z" fill="#32BCAD"/>
-                            <path d="M64.5 120.5C56.8 128.2 52.7 139 52.7 150.3V196.4C52.7 207.7 56.8 218.5 64.5 226.2L120.2 281.9C127.9 289.6 138.7 293.7 150 293.7H235C246.3 293.7 257.1 289.6 264.8 281.9L303.6 243.1C311.3 235.4 315.4 224.6 315.4 213.3V153.3C315.4 146.6 310.1 141.3 303.4 141.3C296.7 141.3 291.4 146.6 291.4 153.3V213.3C291.4 216.8 290.1 220.2 287.7 222.6L248.9 261.4C246.5 263.8 243.1 265.1 239.6 265.1H154.6C151.1 265.1 147.7 263.8 145.3 261.4L89.6 205.7C87.2 203.3 85.9 199.9 85.9 196.4V111.4C85.9 107.9 87.2 104.5 89.6 102.1L98.6 93.1C104 87.7 113.2 87.7 118.6 93.1C124 98.5 124 107.7 118.6 113.1L110.9 120.8L120.3 130.2C125.7 135.6 125.7 144.8 120.3 150.2C114.9 155.6 105.7 155.6 100.3 150.2L82.3 132.2C74.6 124.5 70.5 113.7 70.5 102.4V92.4C70.5 81.1 74.6 70.3 82.3 62.6L139.1 5.8C141.5 3.4 144.9 2.1 148.4 2.1H234C237.5 2.1 240.9 3.4 243.3 5.8L262.8 25.3C268.2 30.7 268.2 39.9 262.8 45.3C257.4 50.7 248.2 50.7 242.8 45.3L224.7 27.2H157.8L106.5 78.5C106.5 78.5 106.4 78.6 106.4 78.6L64.5 120.5z" fill="#32BCAD"/>
-                        </svg>
-                    </span>
-                    
-                    <span class="payment-icon nubank-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="30" width="45" viewBox="0 0 512 512">
-                            <rect x="0" y="0" width="512" height="512" rx="40" fill="#820AD1"/>
-                            <path d="M256 103.5c-84.3 0-152.7 68.4-152.7 152.7 0 84.3 68.4 152.7 152.7 152.7 84.3 0 152.7-68.4 152.7-152.7 0-84.3-68.4-152.7-152.7-152.7zm0 236.7c-46.3 0-84-37.7-84-84s37.7-84 84-84 84 37.7 84 84-37.7 84-84 84z" fill="#FFFFFF"/>
-                        </svg>
-                    </span>
-                    
-                    <span class="payment-icon picpay-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="30" width="45" viewBox="0 0 512 512">
-                            <rect x="0" y="0" width="512" height="512" rx="40" fill="#11C76F"/>
-                            <path d="M339.5 148h-40c-8 0-15 5-17.5 12.5L255 235h-20l-15-75h-40l25 115h45c8 0 15-5 17.5-12.5L295 177h20l15 75h40l-25-115h-5z" fill="#FFFFFF"/>
-                            <circle cx="162.5" cy="187" r="25" fill="#FFFFFF"/>
-                            <circle cx="347.5" cy="187" r="25" fill="#FFFFFF"/>
-                        </svg>
-                    </span>
-                </div>
-                
-                <h4>Selos</h4>
-                <div class="seals">
-                    <img src="/api/placeholder/100/50" alt="Participa do Consumidor.gov">
-                    <img src="/api/placeholder/100/50" alt="RA1000 Reclame Aqui">
-                    <img src="/api/placeholder/100/50" alt="Ambiente Seguro Compra Protegida">
-                </div>
-            </div>
-        </div>
+    <nav class="menu">
+        <ul class="menu-lista">
+            <li class="munu-item"><a href="./index.html">Ínicio</a></li>
+            <li class="munu-item"><a href="./sobre.html">Sobre</a></li>
+            <li class="munu-item"><a href="./contato.html">Contato</a></li>
+        </ul>
+    </nav>
+    <!-- Aqui começa o conteúdo -->
+    <div class="conteudo">
+        <h1>Bem-vindo ao Menu Simples</h1>
+        <p>Este é um exemplo de menu com uma caixa de conteúdo. O menu é responsivo e possui uma transição
+        suave ao passar o mouse sobre os itens. A caixa de conteúdo está centralizada e possui um visual
+        limpo e moderno. </p>
     </div>
-</footer>
-
-<!-- Bootstrap JS Bundle com Popper -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
