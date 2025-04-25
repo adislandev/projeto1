@@ -1,3 +1,4 @@
+
 /* Reset básico para garantir consistência entre navegadores */
 * {
     margin: 0;
@@ -338,4 +339,211 @@ textarea.form-control {
     font-size: 1.2rem;
     vertical-align: middle;
     margin-right: 8px;
+=======
+/* Estilos para o corpo da página */
+body {
+    background-color: #f5f5f7; /* Fundo cinza claro estilo Apple/tech */
+    font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif; /* Fonte mais moderna */
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Estilos para a barra de menu */
+.menu {
+    background-color: #0066cc; /* Azul tecnológico */
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* Estilos para a lista não ordenada dentro do menu */
+.menu-lista {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    width: 80%;
+    max-width: 1200px;
+}
+
+/* Estilos para cada item da lista dentro do menu */
+.munu-item { /* Mantendo o nome original da classe mesmo com erro */
+    margin: 0;
+}
+
+/* Estilos para os links dentro dos itens do menu */
+.munu-item a {
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+/* Estilos para os links dentro dos itens do menu quando o mouse passa por cima */
+.munu-item a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Estilos para a área de conteúdo principal */
+.conteudo {
+    background-color: #fff;
+    max-width: 1000px;
+    text-align: center;
+    margin: 30px auto 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Título principal */
+.conteudo h1 {
+    color: #0066cc;
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+/* Estilos para os parágrafos dentro da área de conteúdo */
+.conteudo p {
+    text-align: center;
+    margin: 20px 35px;
+    color: #555;
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+/* Box centralizada dos benefícios */
+.box {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto 30px; /* Centraliza horizontalmente com auto */
+    padding: 20px;
+    background: linear-gradient(145deg, #0066cc, #0077e6);
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 102, 0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+/* Benefícios */
+.beneficios {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    width: 100%;
+}
+
+.beneficios p {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: calc(33.33% - 15px);
+    text-align: center;
+    color: #333;
+    font-weight: 600;
+    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80px;
+}
+
+.beneficios p:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilos para formulários */
+input[type=text], select, textarea, input[type=tel], input[type=email] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+    font-family: inherit;
+    transition: border-color 0.3s;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: #0066cc;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.2);
+}
+
+/* Estilos para o botão de submit */
+input[type=submit] {
+    background-color: #0066cc;
+    color: white;
+    padding: 14px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+/* Estilos para o botão de submit quando o mouse passa por cima */
+input[type=submit]:hover {
+    background-color: #004c99;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para um contêiner com a classe "contatos" */
+.contatos {
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 25px;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Estilos para o elemento h1 dentro do contêiner "contatos" */
+.contatos h1 {
+    text-align: center;
+    color: #0066cc;
+    margin-bottom: 20px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .beneficios {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .beneficios p {
+        width: 90%;
+    }
+    
+    .box {
+        height: auto;
+        padding: 20px 15px;
+    }
+    
+    .conteudo {
+        margin: 20px 15px;
+        width: auto;
+    }
+    
+    .menu-lista {
+        width: 100%;
+    }
+
 }
